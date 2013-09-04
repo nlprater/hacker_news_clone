@@ -18,6 +18,13 @@
   <title></title>
 </head>
 <body>
+<nav>
+  <% if logged_in? %>
+     <a href="/logout">logout</a>
+  <% else %>
+     <a href="/auth">login/create account</a>
+  <% end %>
+</nav>
   <%= yield %>
 </body>
 </html>

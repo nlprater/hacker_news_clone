@@ -1,0 +1,21 @@
+<h2> <%= @user.username %> </h2>
+
+<h3> User Posts </h3>
+<table>
+  <% @user.posts.each do |post| %>
+    <tr class="post_row"><a href="<%= post.url %>" target="_blank"> <%= post.title %> </a></tr>
+    <br>
+  <% end %>
+
+</table>
+
+<br>
+
+<h3> User Comments </h3>
+<table>
+  <% @user.comments.each do |comment| %>
+    <tr class="comment_row"><a href="/post/<%= comment.post.id %>" > <%= comment.content %></a></tr>
+    <br>
+  <% end %>
+
+</table>

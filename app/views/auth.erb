@@ -1,0 +1,17 @@
+<h1>This is the Auth page, sucka!!</h1>
+<h2>Log in</h2>
+<form action="/login" method="POST">
+  <label>username: <input type="text" name="user[username]"></label><br>
+  <label>password: <input type="password" name="user[password]"></label>
+  <input type="submit" value="Log in">
+</form>
+<% if @error %>
+  <span class="error_message"><%= @error %></span>
+<% end %>
+<h2>Create New</h2>
+<form action="/create" method="POST">
+  <label>username: <input type="text" name="user[username]"></label><br>
+  <label>password: <input type="password" name="user[password]"></label><br>
+  <label>password (again): <input type="password" name="user[password_confirmation]"></label>
+  <input type="submit" value="Create">
+</form>

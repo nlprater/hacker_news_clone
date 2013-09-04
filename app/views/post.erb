@@ -1,0 +1,16 @@
+<table>
+  <a href="<%= @post.url %>"><%= @post.title %></a>
+  <hr>
+  <p>Create New Comment</p>
+  <form action="/comment/<%= @post.id %>" method="POST">
+    <input class="comment" type="text" name="comment[content]">
+    <input type="submit">
+  </form>
+  <% @post.comments.each do |comment| %>
+  <hr>
+    <br><tr class="commenter_name"><a href="/user/<%= comment.user.id %>">
+         <%= comment.user.username %> </a></tr><br>
+    <tr class="comment_row"><%= comment.content %></tr><br>
+  <% end %>
+
+</table>

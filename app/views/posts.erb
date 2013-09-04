@@ -1,0 +1,8 @@
+<table>
+  <a href="/post/new">Create New Post</a><br>
+  <% @posts.each do |post| %>
+    <tr class="post_row"><a href="<%= post.url %>" target="_blank"> <%= post.title %> </a></tr><br>
+    <tr class="comment_row"><a href="/post/<%= post.id %>" > <%= post.comments.all.size %> comments </a></tr><br>
+  <% end %>
+
+</table>
